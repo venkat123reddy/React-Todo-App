@@ -1,12 +1,50 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a simple and interactive Todo application built using React.js, HTML, and CSS. The app helps users manage their tasks efficiently by categorizing them into different states.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React.js
+- HTML
+- CSS
+- AWS (Cloud Services)
+- Vercel (Deployment)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Add New Tasks:** Users can create tasks with a default state of 'New'.
+- **Manage Task States:** Each task can be marked as:
+  - **New:** Task is newly created.
+  - **In Progress:** Task has been started.
+  - **Completed:** Task is finished.
+  - **Terminated:** Task is removed from the list.
+- **View Tasks:** Users can view tasks based on their states.
+- **Track Tasks:** Easily track progress and status of each task.
 
-## Expanding the ESLint configuration
+## Deployment
+The application is deployed on Vercel using AWS cloud services.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+### Prerequisites
+- Node.js (v18+)
+- npm (v9+)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd react-todo-app
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. Access the app at `http://localhost:3000`
+
+### Build for Production
+```bash
+npm run build
+```
