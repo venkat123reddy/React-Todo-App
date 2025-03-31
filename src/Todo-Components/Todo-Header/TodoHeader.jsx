@@ -1,4 +1,4 @@
-import TodoBody from "../Todo-Bady/TodoBody";
+import TodoBody from "../Todo-Body/TodoBody";
 
 function TodoHeader() {
 return (
