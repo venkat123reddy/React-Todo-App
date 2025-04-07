@@ -1,24 +1,23 @@
 
 import React, {useState } from 'react';
+import to from '../TodoHelper/ToTaskDTO'
 
 
 function AddTask() {
 
-    const [tasks,update] = useState([]);
+    const  [tasks,update] = useState([]);
 
     //let tasks = [];
-    let index = 0;
+    
 
     const addTask = () =>{
         let input = document.getElementById("taskinput");
-
-
         update([...tasks,input.value]);
-
         input.value = "";
 
-        index+=1;
         console.log(tasks);
+        to.addTask(input.value);
+        // console.log()
     }
 
     return (<>

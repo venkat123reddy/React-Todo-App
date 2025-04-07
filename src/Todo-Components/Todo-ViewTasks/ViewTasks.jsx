@@ -1,11 +1,20 @@
-
-import task from './Todo-AddTask/AddTask'
+import { useEffect } from 'react';
+import task from '../Todo-AddTask/AddTask'
+import taskHelper from '../TodoHelper/ToTaskDTO'
 
 function ViewTasks() {
 
+    let tasks;
+
+    useEffect(()=>{
+        tasks = taskHelper.getTasks();
+        console.log("Use effects")
+    })
+
     return (
         <>
-        <ol>{task.tasks.map((value,key)=>{return(<li key={index}>{value}</li>)})}</ol>
+        
+        <ol>{tasks.map((task,key)=>{<li key={key}>{task}</li>})}</ol>
         </>
     );
 }
