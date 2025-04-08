@@ -1,20 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import task from '../Todo-AddTask/AddTask'
 import taskHelper from '../TodoHelper/ToTaskDTO'
 
 function ViewTasks() {
-
-    let tasks;
-
+    
+    const [tasks, updateTasks] = useState([]);
     useEffect(()=>{
-        tasks = taskHelper.getTasks();
-        console.log("Use effects")
+        console.log("Use effects");
+        updateTasks(taskHelper.getTasks())
+        console.log(tasks);
     })
+
+    const removeTask = (task)=> {
+        taskHelper.removeTask(task);
+        console.log("remove..task")
+        updateTasks(taskHelper.getTasks());
+
+    }
 
     return (
         <>
         
-        <ol>{tasks.map((task,key)=>{<li key={key}>{task}</li>})}</ol>
+        <ol>{tasks.map((task,k)=>{
+            console.dir(task);
+             return <li key={k}>{task} 
+             
+             <button onClick={removeTask(task)}>
+                Remove Task
+             </button>
+             <button>
+                Change Status
+             </button>
+             
+             </li>})}</ol>;
         </>
     );
 }
